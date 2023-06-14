@@ -1,0 +1,517 @@
+@import url("https://fonts.googleapis.com/css2?family=Orbitron&display=swap");
+* {
+  padding: 0%;
+  margin: 0%;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: linear-gradient(#27cd96, #000);
+  width: 100vw;
+  height: 100vh;
+}
+
+body {
+  --background-color: #18181b;
+  --text-color: #a1a1aa;
+  --card-background-color: rgba(255, 255, 255, 0.015);
+  --card-border-color: rgba(255, 255, 255, 0.1);
+  --card-box-shadow-1: rgba(0, 0, 0, 0.05);
+  --card-box-shadow-1-y: 3px;
+  --card-box-shadow-1-blur: 6px;
+  --card-box-shadow-2: rgba(0, 0, 0, 0.1);
+  --card-box-shadow-2-y: 8px;
+  --card-box-shadow-2-blur: 15px;
+  --card-label-color: #0000;
+  --card-icon-color: #d4d4d8;
+  --card-icon-background-color: rgba(255, 255, 255, 0.08);
+  --card-icon-border-color: rgba(255, 255, 255, 0.12);
+  --card-shine-opacity: 0.1;
+  --card-shine-gradient: linear-gradient(
+    from 205deg at 50% 50%,
+    rgba(16, 185, 129, 0) 0deg,
+    #10b981 25deg,
+    rgba(52, 211, 153, 0.18) 295deg,
+    rgba(16, 185, 129, 0) 360deg
+  );
+  --card-line-color: #2a2b2c;
+  --card-tile-color: rgba(16, 185, 129, 0.05);
+  --card-hover-border-color: rgba(255, 255, 255, 0.2);
+  --card-hover-box-shadow-1: rgba(0, 0, 0, 0.04);
+  --card-hover-box-shadow-1-y: 5px;
+  --card-hover-box-shadow-1-blur: 10px;
+  --card-hover-box-shadow-2: rgba(0, 0, 0, 0.3);
+  --card-hover-box-shadow-2-y: 15px;
+  --card-hover-box-shadow-2-blur: 25px;
+  --card-hover-icon-color: #34d399;
+  --card-hover-icon-background-color: rgba(52, 211, 153, 0.1);
+  --card-hover-icon-border-color: rgba(52, 211, 153, 0.2);
+  --blur-opacity: 0.01;
+}
+
+html::selection {
+  background-color: #000;
+  color: green;
+}
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+.card {
+  background-color: var(--background-color);
+  box-shadow: 0px var(--card-box-shadow-1-y) var(--card-box-shadow-1-blur)
+      var(--card-box-shadow-1),
+    0px var(--card-box-shadow-2-y) var(--card-box-shadow-2-blur)
+      var(--card-box-shadow-2),
+    0 0 0 1px var(--card-border-color);
+  padding: 56px 16px 16px 16px;
+  border-radius: 15px;
+  cursor: pointer;
+  position: relative;
+  transition: box-shadow 0.25s;
+  width: 40%;
+  height: 80%;
+}
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 15px;
+  background-color: var(--card-background-color);
+}
+
+.headSec {
+  width: 100%;
+  height: 30%;
+  /* border: 1px solid red; */
+  position: relative;
+  top: -50px;
+}
+
+.heading {
+  font-size: 50px;
+  font-family: "Orbitron", sans-serif;
+  color: #10b981;
+  position: absolute;
+  top: 50px;
+  left: 70px;
+  z-index: 1000;
+}
+
+.wrap {
+  top: 85px;
+  left: 110%;
+  margin-left: -150px;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  position: relative;
+  z-index: 100000;
+}
+
+ul {
+  -webkit-transform: rotate3d(0, 1, 0, 45deg);
+  -moz-transform: rotate3d(0, 1, 0, 45deg);
+  -o-transform: rotate3d(0, 1, 0, 45deg);
+  -ms-transform: rotate3d(0, 1, 0, 45deg);
+}
+ul li {
+  list-style: none;
+  box-shadow: inset 1px 1px 40px #19a598;
+  background: #1c1c1c;
+  border-radius: 55%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+ul li:nth-child(1) {
+  border: 1px solid #189c90;
+  width: 20px;
+  height: 20px;
+  z-index: -1;
+  margin-top: -15px;
+  margin-left: 5px;
+}
+
+ul li:nth-child(2) {
+  border: 1px solid #169388;
+  width: 40px;
+  height: 40px;
+  z-index: -2;
+  margin-top: -30px;
+  margin-left: 10px;
+}
+
+ul li:nth-child(3) {
+  border: 1px solid #158a80;
+  width: 70px;
+  height: 70px;
+  z-index: -3;
+  margin-top: -45px;
+  margin-left: 15px;
+}
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg) scale(1);
+  }
+  50% {
+    -webkit-transform: rotate(360deg) scale(2);
+  }
+  100% {
+    -webkit-transform: rotate(0deg) scale(1);
+  }
+}
+
+.middle {
+  width: 100%;
+  height: 70%;
+  /* border: 2px solid red; */
+  display: flex;
+}
+
+.inputBar {
+  /* border: 2px solid #10b981; */
+  /* background-color: #10b981; */
+  width: 94%;
+  height: auto;
+  text-align: center;
+}
+
+.think {
+  margin-top: 60px;
+  font-size: 23px;
+  color: #12796f;
+  font-family: "Orbitron", sans-serif;
+  font-weight: bolder;
+}
+
+.input {
+  width: 250px;
+  height: 30px;
+  top: 320px;
+  left: 200px;
+  position: absolute;
+  z-index: 100000;
+  outline: none;
+  background-color: #18181b;
+  border: 1px solid #27cd96;
+  border-radius: 10px;
+  color: white;
+  padding-left: 50px;
+}
+
+.readMind {
+  margin-top: 60px;
+  margin-left:-60px;
+  position: absolute;
+  width: 120px;
+  height: 40px;
+  color: #fff;
+  z-index: 1000;
+  background-color: #10b981;
+  border-radius: 10px;
+  outline: none;
+  cursor: pointer;
+}
+
+.progressBar {
+  /* border: 2px solid red; */
+  width: 50px;
+  height: 320px;
+}
+
+.progress {
+  background-color: #d8d8d8;
+  border-radius: 20px;
+  position: relative;
+  margin: 145px -130px;
+  height: 30px;
+  width: 300px;
+  transform: rotate(90deg);
+}
+
+.progress-done {
+  background: linear-gradient(to left, #10b981, #12796f);
+  box-shadow: 0 3px 3px -5px #10b981, 0 2px 5px #000;
+  border-radius: 20px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 0;
+  opacity: 0;
+  transition: 1s ease 0.3s;
+}
+
+.card .shine {
+  border-radius: inherit;
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  overflow: hidden;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+.card .shine:before {
+  content: "";
+  width: 150%;
+  padding-bottom: 150%;
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  bottom: 55%;
+  filter: blur(35px);
+  opacity: var(--card-shine-opacity);
+  transform: translateX(-50%);
+  background-image: var(--card-shine-gradient);
+}
+.card .background {
+  border-radius: inherit;
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  -webkit-mask-image: radial-gradient(
+    circle at 60% 5%,
+    black 0%,
+    black 15%,
+    transparent 60%
+  );
+  mask-image: radial-gradient(
+    circle at 60% 5%,
+    black 0%,
+    black 15%,
+    transparent 60%
+  );
+}
+.card .background .tiles {
+  opacity: 0;
+  transition: opacity 0.25s;
+}
+.card .background .tiles .tile {
+  position: absolute;
+  background-color: var(--card-tile-color);
+  -webkit-animation-duration: 8s;
+  animation-duration: 8s;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  opacity: 0;
+}
+.card .background .tiles .tile.tile-4,
+.card .background .tiles .tile.tile-6,
+.card .background .tiles .tile.tile-10 {
+  -webkit-animation-delay: -2s;
+  animation-delay: -2s;
+}
+.card .background .tiles .tile.tile-3,
+.card .background .tiles .tile.tile-5,
+.card .background .tiles .tile.tile-8 {
+  -webkit-animation-delay: -4s;
+  animation-delay: -4s;
+}
+.card .background .tiles .tile.tile-2,
+.card .background .tiles .tile.tile-9 {
+  -webkit-animation-delay: -6s;
+  animation-delay: -6s;
+}
+.card .background .tiles .tile.tile-1 {
+  top: 0;
+  left: 0;
+  height: 10%;
+  width: 22.5%;
+}
+.card .background .tiles .tile.tile-2 {
+  top: 0;
+  left: 22.5%;
+  height: 10%;
+  width: 27.5%;
+}
+.card .background .tiles .tile.tile-3 {
+  top: 0;
+  left: 50%;
+  height: 10%;
+  width: 27.5%;
+}
+.card .background .tiles .tile.tile-4 {
+  top: 0;
+  left: 77.5%;
+  height: 10%;
+  width: 22.5%;
+}
+.card .background .tiles .tile.tile-5 {
+  top: 10%;
+  left: 0;
+  height: 22.5%;
+  width: 22.5%;
+}
+.card .background .tiles .tile.tile-6 {
+  top: 10%;
+  left: 22.5%;
+  height: 22.5%;
+  width: 27.5%;
+}
+.card .background .tiles .tile.tile-7 {
+  top: 10%;
+  left: 50%;
+  height: 22.5%;
+  width: 27.5%;
+}
+.card .background .tiles .tile.tile-8 {
+  top: 10%;
+  left: 77.5%;
+  height: 22.5%;
+  width: 22.5%;
+}
+.card .background .tiles .tile.tile-9 {
+  top: 32.5%;
+  left: 50%;
+  height: 22.5%;
+  width: 27.5%;
+}
+.card .background .tiles .tile.tile-10 {
+  top: 32.5%;
+  left: 77.5%;
+  height: 22.5%;
+  width: 22.5%;
+}
+@-webkit-keyframes tile {
+  0%,
+  12.5%,
+  100% {
+    opacity: 1;
+  }
+  25%,
+  82.5% {
+    opacity: 0;
+  }
+}
+@keyframes tile {
+  0%,
+  12.5%,
+  100% {
+    opacity: 1;
+  }
+  25%,
+  82.5% {
+    opacity: 0;
+  }
+}
+.card .background .line {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.35s;
+}
+.card .background .line:before,
+.card .background .line:after {
+  content: "";
+  position: absolute;
+  background-color: var(--card-line-color);
+  transition: transform 0.35s;
+}
+.card .background .line:before {
+  left: 0;
+  right: 0;
+  height: 1px;
+  transform-origin: 0 50%;
+  transform: scaleX(0);
+}
+.card .background .line:after {
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  transform-origin: 50% 0;
+  transform: scaleY(0);
+}
+.card .background .line.line-1:before {
+  top: 10%;
+}
+.card .background .line.line-1:after {
+  left: 22.5%;
+}
+.card .background .line.line-1:before,
+.card .background .line.line-1:after {
+  transition-delay: 0.3s;
+}
+.card .background .line.line-2:before {
+  top: 32.5%;
+}
+.card .background .line.line-2:after {
+  left: 50%;
+}
+.card .background .line.line-2:before,
+.card .background .line.line-2:after {
+  transition-delay: 0.15s;
+}
+.card .background .line.line-3:before {
+  top: 55%;
+}
+.card .background .line.line-3:after {
+  right: 22.5%;
+}
+.card {
+  box-shadow: 0px 3px 6px var(--card-hover-box-shadow-1),
+    0px var(--card-hover-box-shadow-2-y) var(--card-hover-box-shadow-2-blur)
+      var(--card-hover-box-shadow-2),
+    0 0 0 1px var(--card-hover-border-color);
+}
+.card .icon::after {
+  background-color: var(--card-hover-icon-background-color);
+  border-color: var(--card-hover-icon-border-color);
+}
+.card .icon svg {
+  color: var(--card-hover-icon-color);
+}
+.card .shine {
+  opacity: 1;
+  transition-duration: 0.5s;
+  transition-delay: 0s;
+}
+.card .background .tiles {
+  opacity: 1;
+  transition-delay: 0.25s;
+}
+.card .background .tiles .tile {
+  -webkit-animation-name: tile;
+  animation-name: tile;
+}
+.card .background .line {
+  opacity: 1;
+  transition-duration: 0.15s;
+}
+.card .background .line:before {
+  transform: scaleX(1);
+}
+.card .background .line:after {
+  transform: scaleY(1);
+}
+.card .background .line.line-1:before,
+.card .background .line.line-1:after {
+  transition-delay: 0s;
+}
+.card .background .line.line-2:before,
+.card .background .line.line-2:after {
+  transition-delay: 0.15s;
+}
+.card .background .line.line-3:before,
+.card .background .line.line-3:after {
+  transition-delay: 0.3s;
+}
+
+.hidden{
+    border-radius: 10px;
+    width: 490px;
+    height: 220px;
+    background-color: transparent;
+    font-family: "Orbitron", sans-serif;
+    color: #10b981;
+    text-align: center;
+    margin-top: 130px;
+}
